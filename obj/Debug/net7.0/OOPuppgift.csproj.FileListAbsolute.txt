@@ -1,0 +1,15 @@
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\bin\Debug\net7.0\OOPuppgift.exe
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\bin\Debug\net7.0\OOPuppgift.deps.json
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\bin\Debug\net7.0\OOPuppgift.runtimeconfig.json
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\bin\Debug\net7.0\OOPuppgift.dll
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\bin\Debug\net7.0\OOPuppgift.pdb
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\obj\Debug\net7.0\OOPuppgift.csproj.AssemblyReference.cache
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\obj\Debug\net7.0\OOPuppgift.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\obj\Debug\net7.0\OOPuppgift.AssemblyInfoInputs.cache
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\obj\Debug\net7.0\OOPuppgift.AssemblyInfo.cs
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\obj\Debug\net7.0\OOPuppgift.csproj.CoreCompileInputs.cache
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\obj\Debug\net7.0\OOPuppgift.dll
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\obj\Debug\net7.0\refint\OOPuppgift.dll
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\obj\Debug\net7.0\OOPuppgift.pdb
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\obj\Debug\net7.0\OOPuppgift.genruntimeconfig.cache
+C:\Users\melvi\OneDrive\Dokument\GitHub\OOPuppgift\obj\Debug\net7.0\ref\OOPuppgift.dll

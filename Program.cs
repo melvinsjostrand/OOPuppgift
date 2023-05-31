@@ -79,18 +79,14 @@ class Enemy
 class Game
 {
     private Player player;
-    private Enemy[] enemies;
+    private Enemy enemy;
     private int currentEnemyIndex;
     private GameState gameState;
 
     public Game()
     {
         player = new Player();
-        enemies = new Enemy[3];
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            enemies[i] = new Enemy(50);
-        }
+        enemy = new Enemy(50);
         currentEnemyIndex = 0;
         gameState = GameState.MainMenu;
     }
@@ -126,7 +122,7 @@ class Game
     {
         Console.WriteLine("=== Huvudmeny ===");
         Console.WriteLine("1. Starta Battle");
-        Console.WriteLine("2. gå till staden");
+        Console.WriteLine("2. Gå till staden");
         Console.WriteLine("3. Stäng av spelet");
 
         int choice = GetChoice(3);
@@ -140,7 +136,7 @@ class Game
                 gameState = GameState.City;
                 break;
             case 3:
-                Console.WriteLine("Tack för du spelat!");
+                Console.WriteLine("Tack för att du spelade!");
                 gameState = GameState.Exit;
                 break;
         }
@@ -151,7 +147,7 @@ class Game
         Console.WriteLine("=== Battle ===");
         Console.WriteLine("Spelarens HP: " + player.Health);
         Console.WriteLine("Spelarens Score: " + player.Score);
-        Console.WriteLine("Fiende: " + (currentEnemyIndex + 1) + " - HP: " + enemies[currentEnemyIndex].Health);
+        Console.WriteLine("Fiende: " + (currentEnemyIndex + 1) + " - HP: " + enemy.Health);
 
         Console.WriteLine("Välj mellan att attackera eller gå tillbaka:");
         Console.WriteLine("1. Attackera");
@@ -161,16 +157,17 @@ class Game
         switch (choice)
         {
             case 1:
-                player.DealDamage(enemies[currentEnemyIndex]);
+                player.DealDamage(enemy);
 
-                if (enemies[currentEnemyIndex].Health <= 0)
+                if (enemy.Health <= 0)
                 {
                     Console.WriteLine("Du dödade fienden!");
 
-                    if (currentEnemyIndex < enemies.Length - 1)
+                    if (currentEnemyIndex < 2)
                     {
                         Console.WriteLine("Gör dig redo för nästa fiende!");
                         currentEnemyIndex++;
+                        enemy = new Enemy(50); // Skapa en ny fiende med 50 hälsa
                     }
                     else
                     {
@@ -180,8 +177,8 @@ class Game
                 }
                 else
                 {
-                    Console.WriteLine("Motståndaren dödade dig!");
-                    enemies[currentEnemyIndex].DealDamage(player);
+                    Console.WriteLine("Motståndaren attackerade dig!");
+                    enemy.DealDamage(player);
                     if (player.Health <= 0)
                     {
                         Console.WriteLine("Du Dog!");
@@ -190,7 +187,7 @@ class Game
                 }
                 break;
             case 2:
-                Console.WriteLine("You retreated from the battle.");
+                Console.WriteLine("Du flydde från striden.");
                 gameState = GameState.City;
                 break;
         }
@@ -201,7 +198,7 @@ class Game
         Console.WriteLine("=== Stad ===");
         Console.WriteLine("Spelarens HP: " + player.Health);
         Console.WriteLine("Spelarens Score: " + player.Score);
-        Console.WriteLine("1. Gå och lägg dig för att få tillbaka alla dina krafter och få tillbaka din hälsa");
+        Console.WriteLine("1. Gå och lägg dig för att återfå all din energi och hälsa");
         Console.WriteLine("2. Tillbaka till huvudmeny");
 
         int choice = GetChoice(2);
@@ -209,7 +206,7 @@ class Game
         {
             case 1:
                 player.Health = 100;
-                Console.WriteLine("Du sov väldigt skönt och lyckades få tillbaka all din kraft och din hälsa.");
+                Console.WriteLine("Du sov väldigt skönt och lyckades återfå all din energi och hälsa.");
                 break;
             case 2:
                 gameState = GameState.MainMenu;
@@ -242,7 +239,7 @@ class Game
         {
             writer.WriteLine(player.Score);
         }
-        Console.WriteLine("Dina poäng finns nu att hitta vid scores.txt");
+        Console.WriteLine("Dina poäng finns nu att hitta i scores.txt");
     }
 }
 
@@ -254,4 +251,3 @@ class Program
         game.Run();
     }
 }
-

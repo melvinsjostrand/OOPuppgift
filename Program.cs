@@ -10,13 +10,13 @@ enum GameState
     Exit
 }
 
-class Player
+class Character
 {
     public int Health { get; set; }
     public int Score { get; set; }
     public Random Random { get; }
 
-    public Player()
+    public Character()
     {
         Health = 100;
         Score = 0;
@@ -32,7 +32,10 @@ class Player
             Console.WriteLine("Du dog!");
         }
     }
+}
 
+class Player : Character
+{
     public void DealDamage(Enemy enemy)
     {
         int damage = Random.Next(10, 16); // Mellan 10-15 skada
@@ -45,25 +48,14 @@ class Player
     }
 }
 
-class Enemy
+class Enemy : Character
 {
-    public int Health { get; set; }
-    public Random Random { get; }
 
     public Enemy(int health)
     {
         Health = health;
-        Random = new Random();
     }
 
-    public void TakeDamage(int damage)
-    {
-        Health -= damage;
-        if (Health <= 0)
-        {
-            Console.WriteLine("Fienden dog!");
-        }
-    }
 
     public void DealDamage(Player player)
     {
